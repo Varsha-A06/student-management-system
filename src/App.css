@@ -1,0 +1,481 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+}
+
+/* APP LAYOUT */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  background: #1e293b;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  padding: 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar ul li:hover {
+  background: #2563eb;
+  transform: translateX(5px);
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex: 1;
+  padding: 25px;
+}
+
+.main-content h1 {
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.card {
+  flex: 1;
+  min-width: 220px;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  font-size: 34px;
+}
+
+/* CONTROLS */
+.controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.controls input,
+.controls select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  min-width: 200px;
+  outline: none;
+}
+
+.controls input:focus,
+.controls select:focus {
+  border-color: #2563eb;
+}
+
+/* FORM */
+.student-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.student-form input,
+.student-form select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.2s;
+}
+
+.student-form input:focus,
+.student-form select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37,99,235,0.3);
+}
+
+.student-form button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.student-form button:hover {
+  background: #1d4ed8;
+  transform: scale(1.03);
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: #2563eb;
+  color: white;
+  padding: 14px;
+}
+
+td {
+  padding: 12px;
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+tbody tr:hover {
+  background: #eef4ff;
+  cursor: pointer;
+}
+
+/* STATUS BADGES */
+.excellent {
+  background: #22c55e;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.average {
+  background: #f59e0b;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+/* ARREAR HIGHLIGHT (optional use) */
+.arrear-row {
+  background: #ffe4e6 !important;
+}
+
+/* BUTTONS */
+button {
+  border: none;
+  padding: 7px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:nth-child(1) {
+  background: #f59e0b;
+  color: white;
+  margin-right: 5px;
+}
+
+button:nth-child(2) {
+  background: #ef4444;
+  color: white;
+}
+
+/* CHARTS */
+.charts-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+
+.chart-box {
+  flex: 1;
+  min-width: 320px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.chart-box h3 {
+  margin-bottom: 15px;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 350px;
+  text-align: center;
+  position: relative;
+  animation: popup 0.3s ease;
+}
+
+@keyframes popup {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  .charts-container {
+    flex-direction: column;
+  }
+}
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.login-box input,
+.login-box select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.login-box button {
+  background: #2563eb;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #1d4ed8;
+}
+.search-box {
+  padding: 10px;
+  width: 300px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+/* SEARCH BAR */
+.page-search {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* DEPARTMENTS */
+.dept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.dept-card {
+  background: #2563eb;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.dept-card:hover {
+  transform: scale(1.05);
+}
+
+/* SETTINGS */
+.settings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.settings-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: #f3f4f6;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.settings-item:hover {
+  background: #e5e7eb;
+}
+
+.settings-item.logout {
+  color: red;
+}
+.edit-btn {
+  background: #2563eb;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-btn {
+  background: red;
+  color: white;   /* 🔥 THIS FIXES YOUR ISSUE */
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.error-input {
+  border: 2px solid red !important;
+}
+.settings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.settings-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f3f4f6;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.settings-item:hover {
+  background: #e5e7eb;
+  transform: scale(1.02);
+}
+
+.logout {
+  color: red;
+  font-weight: bold;
+}
+
+.help-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.help-card {
+  background: #f3f4f6;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.help-card:hover {
+  background: #e5e7eb;
+  transform: scale(1.02);
+}
